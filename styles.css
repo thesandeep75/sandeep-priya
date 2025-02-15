@@ -1,0 +1,641 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Header Section */
+header {
+    position: relative;
+    height: 80vh; /* Reduced height for better mobile experience */
+    overflow: hidden;
+    background: url('images/wedding-background.jpg') no-repeat center center/cover;
+    color: #fff; /* Default text color (white) */
+    /* Fallback background color */
+    background-color: #f8ebe2; /* Soft cream background */
+}
+
+.fireworks-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff; /* White text color */
+    animation: fadeIn 2s ease-in-out forwards, glow 2s infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 153, 153, 0.8); /* Soft pink glow */
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 153, 153, 1); /* Brighter pink glow */
+    }
+}
+
+header p {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #ffffff; /* White text color */
+    text-shadow: 0 0 5px rgba(255, 153, 153, 0.8); /* Subtle pink glow */
+}
+/* Header Section for Mobile */
+@media (max-width: 768px) {
+    header {
+        height: 60vh; /* Reduce height for mobile */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    header p {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+}
+/* Bride & Groom Section */
+.bride-groom {
+    background-color: #fff;
+    padding: 50px 0;
+    color: #333;
+}
+
+.bride-groom h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff9999; /* Soft pink heading */
+}
+
+.couple-profiles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile {
+    width: 45%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffcccc; /* Light pink border */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+    border-color: #ff9999; /* Darker pink border on hover */
+}
+
+.profile h3 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #ff9999; /* Soft pink text */
+}
+
+.profile p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+}
+/* Bride & Groom Section for Mobile */
+@media (max-width: 768px) {
+    .couple-profiles {
+        flex-direction: column; /* Stack profiles vertically */
+    }
+
+    .profile {
+        width: 80%; /* Wider profile cards for better readability */
+        margin: 10px 0; /* Reduce margin for better spacing */
+    }
+
+    .profile-image {
+        width: 120px; /* Smaller image size for mobile */
+        height: 120px;
+    }
+
+    .profile h3 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .profile p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Invitation Section */
+.invitation {
+    background-color: #fff;
+    padding: 50px 0;
+    color: #333;
+}
+
+.invitation h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ff9999; /* Soft pink heading */
+}
+
+.invitation h3 {
+    font-size: 3rem;
+    color: #ff9999; /* Soft pink text */
+    margin-bottom: 20px;
+}
+
+.invitation .date,
+.invitation .time,
+.invitation .location {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+/* Invitation Section for Mobile */
+@media (max-width: 768px) {
+    .invitation h2 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .invitation h3 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce gap between buttons */
+    }
+
+    .btn {
+        width: 100%; /* Full-width buttons for mobile */
+        text-align: center;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9999; /* Soft pink button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #ff6666; /* Darker pink on hover */
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.location-btn {
+    background-color: #ffcccc; /* Light pink button */
+}
+
+.location-btn:hover {
+    background-color: #ff9999; /* Soft pink on hover */
+}
+
+/* Countdown Timer */
+.countdown {
+    margin: 20px 0;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.time-box {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.time-box span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff9999;
+}
+
+.time-box p {
+    font-size: 1rem;
+    color: #666;
+}
+/* Countdown Timer for Mobile */
+@media (max-width: 768px) {
+    #timer {
+        gap: 10px; /* Reduce gap between time boxes */
+    }
+
+    .time-box {
+        padding: 5px; /* Reduce padding for compactness */
+    }
+
+    .time-box span {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .time-box p {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Event Details Section */
+.details {
+    background: linear-gradient(135deg, #f8ebe2, #fff3e0); /* Gradient cream background */
+    padding: 60px 0;
+    color: #333;
+    position: relative;
+    overflow: hidden; /* For decorative elements */
+}
+
+.details h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #ff9999; /* Soft pink heading */
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Spacing between letters */
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+/* Decorative underline for the heading */
+.details h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ff9999; /* Soft pink underline */
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Space between event cards */
+    position: relative;
+    z-index: 2;
+}
+
+.event {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #f8ebe2); /* Subtle gradient background */
+    padding: 25px;
+    border-radius: 15px; /* Rounded corners for elegance */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 45%; /* Adjust width for better spacing */
+    opacity: 1; /* Ensure visibility */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    overflow: hidden; /* For decorative effects */
+}
+
+/* Hover effect for event cards */
+.event:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Decorative glowing border on hover */
+.event:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #ff9999; /* Pink glowing border */
+    border-radius: 15px;
+    animation: glowBorder 1.5s infinite alternate;
+}
+
+@keyframes glowBorder {
+    from {
+        box-shadow: 0 0 10px rgba(255, 153, 153, 0.6);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 153, 153, 1);
+    }
+}
+
+/* Event Icons */
+.event-icon {
+    position: relative;
+    width: 70px; /* Larger but not overwhelming */
+    height: 70px;
+    margin: 0 auto 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 3px solid #ffcccc; /* Light pink border */
+    border-radius: 50%; /* Circular shape for elegance */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* White background for contrast */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.event-icon::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: rgba(255, 153, 153, 0.2); /* Subtle pink glow */
+    z-index: -1;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.event-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 0 15px rgba(255, 153, 153, 0.8); /* Pink shadow */
+    border-color: #ff9999; /* Darker pink border on hover */
+}
+
+.event h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ff9999; /* Soft pink text */
+    font-weight: bold; /* Bold for emphasis */
+    text-transform: capitalize; /* Capitalize first letter */
+    transition: color 0.3s ease;
+}
+
+.event h3:hover {
+    color: #ff6666; /* Darker pink on hover */
+}
+
+.event p {
+    font-size: 1.1rem;
+    color: #666; /* Subtle gray text */
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+.event p:hover {
+    color: #333; /* Darker text on hover */
+}
+/* Event Details Section for Mobile */
+@media (max-width: 768px) {
+    .event-info {
+        flex-direction: column; /* Stack event cards vertically */
+    }
+
+    .event {
+        width: 100%; /* Full-width event cards for mobile */
+        margin-bottom: 20px; /* Add spacing between cards */
+    }
+
+    .event h3 {
+        font-size: 1.4rem; /* Smaller font size for mobile */
+    }
+
+    .event p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Photo Gallery */
+.gallery {
+    background-color: #f8ebe2;
+    padding: 50px 0;
+    color: #333;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff9999;
+    text-align: center;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Center the grid */
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+/* Photo Gallery for Mobile */
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items */
+        gap: 10px; /* Reduce gap between images */
+    }
+
+    .photo-grid img {
+        border-radius: 5px; /* Smaller border radius for mobile */
+    }
+}
+
+    /* Personalized Message */
+.personal-message {
+    background-color: #fff;
+    padding: 50px 0;
+    color: #333;
+}
+
+.personal-message h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff9999;
+}
+
+.personal-message p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+}
+/* Personalized Message for Mobile */
+@media (max-width: 768px) {
+    .personal-message h2 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .personal-message p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #f8ebe2; /* Cream footer */
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Scroll-to-Top Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 10;
+    padding: 10px 15px;
+    background-color: #ff9999;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#scrollToTop:hover {
+    background-color: #ff6666;
+    transform: scale(1.1);
+}
+
+/* Background Music Button */
+#playPauseButton {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 10;
+    padding: 10px 15px;
+    background-color: #ffcccc;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#playPauseButton:hover {
+    background-color: #ff9999;
+    transform: scale(1.1);
+}
+/* Scroll-to-Top and Music Button for Mobile */
+@media (max-width: 768px) {
+    #scrollToTop,
+    #playPauseButton {
+        position: fixed;
+        right: 10px; /* Position from the right edge */
+        padding: 8px 12px; /* Smaller padding for mobile */
+        font-size: 1rem; /* Smaller font size for mobile */
+        background-color: #ff9999; /* Soft pink background */
+        color: #fff; /* White text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Ensure it's above other elements */
+        display: inline-block; /* Prevent full-width behavior */
+        width: auto; /* Ensure it doesn't take full width */
+        text-align: center; /* Center text inside the button */
+    }
+
+    #scrollToTop {
+        bottom: 10px; /* Position from the bottom */
+    }
+
+    #playPauseButton {
+        bottom: 60px; /* Position from the bottom */
+    }
+}
