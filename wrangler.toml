@@ -5,5 +5,5 @@ workers_dev = true
 compatibility_date = "2025-02-17"
 
 [site]
-bucket = "./"  # Directory containing index.html
-
+bucket = "."
+entry-point = "workers-site"
