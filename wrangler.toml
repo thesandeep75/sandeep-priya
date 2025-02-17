@@ -6,4 +6,4 @@ compatibility_date = "2025-02-17"
 
 [site]
 bucket = "."
-entry-point = "workers-site"
+entry-point = "workers-site/index.js"
