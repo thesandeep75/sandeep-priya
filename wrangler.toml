@@ -2,10 +2,8 @@ name = "sp"
 account_id = "08afdfce49238d948b184d585eb8d215"
 workers_dev = true
 
-# Define the directory with static files
-[site]
-bucket = "./"    # This points to the root where index.html is located
-
-main = "./index.html"  # Define your entry point
-
 compatibility_date = "2025-02-17"
+
+[site]
+bucket = "./"  # Directory containing index.html
+
