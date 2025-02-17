@@ -1,7 +1,11 @@
 name = "sp"
-type = "javascript"
 account_id = "08afdfce49238d948b184d585eb8d215"
-compatibility_date = "2025-02-17"
+workers_dev = true
 
-# Serve static assets from the specified directory
-site = { bucket = "." }
+# Define the directory with static files
+[site]
+bucket = "./"    # This points to the root where index.html is located
+
+main = "./index.html"  # Define your entry point
+
+compatibility_date = "2025-02-17"
