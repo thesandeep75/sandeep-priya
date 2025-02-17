@@ -1,3 +1,7 @@
-name = "sandeepriya"
-main = "src/index.html" # Ensure this points to your script
+name = "sp"
+type = "javascript"
+account_id = "08afdfce49238d948b184d585eb8d215"
 compatibility_date = "2025-02-17"
+
+# Serve static assets from the specified directory
+site = { bucket = "." }
